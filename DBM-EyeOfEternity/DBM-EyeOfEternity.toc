@@ -1,11 +1,11 @@
 ## Interface: 30300
-## Title:|cffffe00a<|r|cffff7d0aDBM|r|cffffe00a>|r |cff69ccf0Eye of Eternity|r
-## Title-deDE:|cffffe00a<|r|cffff7d0aDBM|r|cffffe00a>|r |cff69ccf0Das Auge der Ewigkeit|r
-## Title-ruRU:|cffffe00a<|r|cffff7d0aDBM|r|cffffe00a>|r |cff69ccf0Око Вечности|r
-## Title-zhTW:|cffffe00a<|r|cffff7d0aDBM|r|cffffe00a>|r |cff69ccf0永恆之眼|r
-## Title-zhCN:|cffffe00a<|r|cffff7d0aDBM|r|cffffe00a>|r |cff69ccf0永恒之眼|r
-## Title-koKR:|cffffe00a<|r|cffff7d0aDBM|r|cffffe00a>|r |cff69ccf0영원의 눈|r
-## Title-esES:|cffffe00a<|r|cffff7d0aDBM|r|cffffe00a>|r |cff69ccf0El Ojo de la Eternidad|r
+## Title:|cffffe00a<|r|cffff7d0aDBM-RG|r|cffffe00a>|r |cff69ccf0Eye of Eternity|r
+## Title-deDE:|cffffe00a<|r|cffff7d0aDBM-RG|r|cffffe00a>|r |cff69ccf0Das Auge der Ewigkeit|r
+## Title-ruRU:|cffffe00a<|r|cffff7d0aDBM-RG|r|cffffe00a>|r |cff69ccf0Око Вечности|r
+## Title-zhTW:|cffffe00a<|r|cffff7d0aDBM-RG|r|cffffe00a>|r |cff69ccf0永恆之眼|r
+## Title-zhCN:|cffffe00a<|r|cffff7d0aDBM-RG|r|cffffe00a>|r |cff69ccf0永恒之眼|r
+## Title-koKR:|cffffe00a<|r|cffff7d0aDBM-RG|r|cffffe00a>|r |cff69ccf0영원의 눈|r
+## Title-esES:|cffffe00a<|r|cffff7d0aDBM-RG|r|cffffe00a>|r |cff69ccf0El Ojo de la Eternidad|r
 ## LoadOnDemand: 1
 ## RequiredDeps: DBM-Core
 ## SavedVariables: DBMEyeOfEternity_AllSavedVars
