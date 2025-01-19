@@ -1,12 +1,12 @@
 ## Interface: 30300
-## Title:|cffffe00a<|r|cffff7d0aDBM|r|cffffe00a>|r |cff69ccf0Naxxramas (Vanilla)|r
-## Title-deDE:|cffffe00a<|r|cffff7d0aDBM|r|cffffe00a>|r |cff69ccf0Naxxramas (Vanilla)|r
-## Title-ruRU:|cffffe00a<|r|cffff7d0aDBM|r|cffffe00a>|r |cff69ccf0Наксрамас (классический)|r
-## Title-zhTW:|cffffe00a<|r|cffff7d0aDBM|r|cffffe00a>|r |cff69ccf0納克薩瑪斯 (Vanilla)|r
-## Title-zhCN:|cffffe00a<|r|cffff7d0aDBM|r|cffffe00a>|r |cff69ccf0纳克萨玛斯 (Vanilla)|r
-## Title-koKR:|cffffe00a<|r|cffff7d0aDBM|r|cffffe00a>|r |cff69ccf0낙스라마스 (클래식)|r
-## Title-esES:|cffffe00a<|r|cffff7d0aDBM|r|cffffe00a>|r |cff69ccf0Naxxramas (Clásico)|r
-## Title-esMX:|cffffe00a<|r|cffff7d0aDBM|r|cffffe00a>|r |cff69ccf0Naxxramas (Clásico)|r
+## Title:|cffffe00a<|r|cffff7d0aDBM-RG|r|cffffe00a>|r |cff69ccf0Naxxramas (Vanilla)|r
+## Title-deDE:|cffffe00a<|r|cffff7d0aDBM-RG|r|cffffe00a>|r |cff69ccf0Naxxramas (Vanilla)|r
+## Title-ruRU:|cffffe00a<|r|cffff7d0aDBM-RG|r|cffffe00a>|r |cff69ccf0Наксрамас (классический)|r
+## Title-zhTW:|cffffe00a<|r|cffff7d0aDBM-RG|r|cffffe00a>|r |cff69ccf0納克薩瑪斯 (Vanilla)|r
+## Title-zhCN:|cffffe00a<|r|cffff7d0aDBM-RG|r|cffffe00a>|r |cff69ccf0纳克萨玛斯 (Vanilla)|r
+## Title-koKR:|cffffe00a<|r|cffff7d0aDBM-RG|r|cffffe00a>|r |cff69ccf0낙스라마스 (클래식)|r
+## Title-esES:|cffffe00a<|r|cffff7d0aDBM-RG|r|cffffe00a>|r |cff69ccf0Naxxramas (Clásico)|r
+## Title-esMX:|cffffe00a<|r|cffff7d0aDBM-RG|r|cffffe00a>|r |cff69ccf0Naxxramas (Clásico)|r
 ## LoadOnDemand: 1
 ## RequiredDeps: DBM-Core
 ## SavedVariables: DBMVanillaNaxx_AllSavedVars
