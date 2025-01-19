@@ -1,7 +1,7 @@
 ## Interface: 30300
-## Title:|cffffe00a<|r|cffff7d0aDBM|r|cffffe00a>|r |cff69ccf0Magtheridon|r
-## Title-zhCN:|cffffe00a<|r|cffff7d0aDBM|r|cffffe00a>|r |cff69ccf0玛瑟里顿|r
-## Title-ruRU:|cffffe00a<|r|cffff7d0aDBM|r|cffffe00a>|r |cff69ccf0Магтеридон|r
+## Title:|cffffe00a<|r|cffff7d0aDBM-RG|r|cffffe00a>|r |cff69ccf0Magtheridon|r
+## Title-zhCN:|cffffe00a<|r|cffff7d0aDBM-RG|r|cffffe00a>|r |cff69ccf0玛瑟里顿|r
+## Title-ruRU:|cffffe00a<|r|cffff7d0aDBM-RG|r|cffffe00a>|r |cff69ccf0Магтеридон|r
 ## LoadOnDemand: 1
 ## RequiredDeps: DBM-Core
 ## SavedVariables: DBMMagtheridon_AllSavedVars
