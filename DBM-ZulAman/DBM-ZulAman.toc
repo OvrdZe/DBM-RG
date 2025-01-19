@@ -1,8 +1,8 @@
 ## Interface: 30300
-## Title:|cffffe00a<|r|cffff7d0aDBM|r|cffffe00a>|r |cff69ccf0Zul'Aman|r
-## Title-zhCN:|cffffe00a<|r|cffff7d0aDBM|r|cffffe00a>|r |cff69ccf0祖阿曼|r
-## Title-koKR:|cffffe00a<|r|cffff7d0aDBM|r|cffffe00a>|r |cff69ccf0줄아만|r
-## Title-ruRU:|cffffe00a<|r|cffff7d0aDBM|r|cffffe00a>|r |cff69ccf0Зул'Аман|r
+## Title:|cffffe00a<|r|cffff7d0aDBM-RG|r|cffffe00a>|r |cff69ccf0Zul'Aman|r
+## Title-zhCN:|cffffe00a<|r|cffff7d0aDBM-RG|r|cffffe00a>|r |cff69ccf0祖阿曼|r
+## Title-koKR:|cffffe00a<|r|cffff7d0aDBM-RG|r|cffffe00a>|r |cff69ccf0줄아만|r
+## Title-ruRU:|cffffe00a<|r|cffff7d0aDBM-RG|r|cffffe00a>|r |cff69ccf0Зул'Аман|r
 ## LoadOnDemand: 1
 ## RequiredDeps: DBM-Core
 ## SavedVariables: DBMZulAman_AllSavedVars
