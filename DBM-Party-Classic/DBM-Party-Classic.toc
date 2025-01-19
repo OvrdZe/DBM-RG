@@ -1,14 +1,14 @@
 ## Interface: 30300
-## Title:|cffffe00a<|r|cffff7d0aDBM|r|cffffe00a>|r |cff69ccf0Dungeons (Classic)|r
-## Title-deDE:|cffffe00a<|r|cffff7d0aDBM|r|cffffe00a>|r |cff69ccf0Gruppe-Classic|r
-## Title-esES:|cffffe00a<|r|cffff7d0aDBM|r|cffffe00a>|r |cff69ccf0Mazmorras (Clásico)|r
-## Title-esMX:|cffffe00a<|r|cffff7d0aDBM|r|cffffe00a>|r |cff69ccf0Calabozos (Clásico)|r
-## Title-ptBR:|cffffe00a<|r|cffff7d0aDBM|r|cffffe00a>|r |cff69ccf0Masmorras (Clássico)|r
-## Title-frFR:|cffffe00a<|r|cffff7d0aDBM|r|cffffe00a>|r |cff69ccf0Donjons (Classique)|r
-## Title-ruRU:|cffffe00a<|r|cffff7d0aDBM|r|cffffe00a>|r |cff69ccf0Подземелье (классический)|r
-## Title-koKR:|cffffe00a<|r|cffff7d0aDBM|r|cffffe00a>|r |cff69ccf0던전 (클래식)|r
-## Title-zhTW:|cffffe00a<|r|cffff7d0aDBM|r|cffffe00a>|r |cff69ccf0隊伍首領-傳統|r
-## Title-zhCN:|cffffe00a<|r|cffff7d0aDBM|r|cffffe00a>|r |cff69ccf0队伍首领(经典旧世)|r
+## Title:|cffffe00a<|r|cffff7d0aDBM-RG|r|cffffe00a>|r |cff69ccf0Dungeons (Classic)|r
+## Title-deDE:|cffffe00a<|r|cffff7d0aDBM-RG|r|cffffe00a>|r |cff69ccf0Gruppe-Classic|r
+## Title-esES:|cffffe00a<|r|cffff7d0aDBM-RG|r|cffffe00a>|r |cff69ccf0Mazmorras (Clásico)|r
+## Title-esMX:|cffffe00a<|r|cffff7d0aDBM-RG|r|cffffe00a>|r |cff69ccf0Calabozos (Clásico)|r
+## Title-ptBR:|cffffe00a<|r|cffff7d0aDBM-RG|r|cffffe00a>|r |cff69ccf0Masmorras (Clássico)|r
+## Title-frFR:|cffffe00a<|r|cffff7d0aDBM-RG|r|cffffe00a>|r |cff69ccf0Donjons (Classique)|r
+## Title-ruRU:|cffffe00a<|r|cffff7d0aDBM-RG|r|cffffe00a>|r |cff69ccf0Подземелье (классический)|r
+## Title-koKR:|cffffe00a<|r|cffff7d0aDBM-RG|r|cffffe00a>|r |cff69ccf0던전 (클래식)|r
+## Title-zhTW:|cffffe00a<|r|cffff7d0aDBM-RG|r|cffffe00a>|r |cff69ccf0隊伍首領-傳統|r
+## Title-zhCN:|cffffe00a<|r|cffff7d0aDBM-RG|r|cffffe00a>|r |cff69ccf0队伍首领(经典旧世)|r
 
 ## Author: MysticalOS
 ## LoadOnDemand: 1
