@@ -13,7 +13,7 @@ mod.noStatistics = true
 local warningWaveNow	= mod:NewAnnounce("WarningWaveNow", 3)
 
 local timerWaveIn		= mod:NewTimer(20, "TimerWaveIn", 57687, nil, nil, 1)
-local timerRoleplay		= mod:NewTimer(162, "TimerRoleplay")
+local timerRoleplay		= mod:NewTimer(150, "TimerRoleplay")
 
 local devouring = L.Devouring
 local meathook = L.Meathook
