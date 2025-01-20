@@ -92,9 +92,9 @@ function mod:OnCombatStart(delay)
 		warnInciteTerrorSoon:Schedule(119-delay)
 		warnInciteTerrorSoon:ScheduleVoice(119-delay, "fearsoon")
 	else
-		timerNextInciteTerror:Start(127-delay)
-		warnInciteTerrorSoon:Schedule(122-delay)
-		warnInciteTerrorSoon:ScheduleVoice(122-delay, "fearsoon")
+		timerNextInciteTerror:Start(135-delay) -- |127|
+		warnInciteTerrorSoon:Schedule(130-delay) -- |122|
+		warnInciteTerrorSoon:ScheduleVoice(130-delay, "fearsoon") -- |122|
 	end
 end
 
