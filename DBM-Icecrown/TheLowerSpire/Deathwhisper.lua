@@ -46,7 +46,7 @@ local warnDarkEmpowerment			= mod:NewSpellAnnounce(70901, 4)
 local specWarnVampricMight			= mod:NewSpecialWarningDispel(70674, "MagicDispeller", nil, nil, 1, 2)
 local specWarnDarkMartyrdom			= mod:NewSpecialWarningRun(71236, "Melee", nil, nil, 4, 2)
 
-local timerAdds						= mod:NewTimer(60, "TimerAdds", 61131, nil, nil, 1, DBM_COMMON_L.TANK_ICON..DBM_COMMON_L.DAMAGE_ICON)
+local timerAdds						= mod:NewTimer(59, "TimerAdds", 61131, nil, nil, 1, DBM_COMMON_L.TANK_ICON..DBM_COMMON_L.DAMAGE_ICON) --|60|
 
 -- Boss
 mod:AddTimerLine(L.name)
@@ -80,7 +80,7 @@ local specWarnVengefulShade			= mod:NewSpecialWarning("SpecWarnVengefulShade", t
 local specWarnVengefulShadeOnYou	= mod:NewSpecialWarningRun(71426, nil, nil, nil, 4, 2)
 --local yellVengefulShadeOnMe			= mod:NewYellMe(71426)
 
-local timerSummonSpiritCD			= mod:NewCDTimer(11, 71426, nil, true, nil, 3, nil, nil, true) -- SUMMON cleu event is fired much later than UNIT_SPELLCAST_SUCCEEDED (11.0-13.8), and with higher variance too. Initially using CLEU, but switched to UNIT event. ~5s variance for CLEU [9.4-14.1]. Added "keep" arg (10H Lordaeron 2022/10/02) - 9.9, 12.1, 11.7, 14.1, 10.1, 11.1, 11.7, 11.7, 13.1, 12.1, 9.4 ||| Stage 2/11.4, 11.3, 11.6, 11.3, 11.1, 11.1, 11.2, 11.5, 12.0, 11.3, 11.5, 11.7, 11.1, 11.7, 11.9, 11.4, 11.2, 11.7, 11.8, 11.1, 13.8
+local timerSummonSpiritCD			= mod:NewCDTimer(10, 71426, nil, true, nil, 3, nil, nil, true) --|11| SUMMON cleu event is fired much later than UNIT_SPELLCAST_SUCCEEDED (11.0-13.8), and with higher variance too. Initially using CLEU, but switched to UNIT event. ~5s variance for CLEU [9.4-14.1]. Added "keep" arg (10H Lordaeron 2022/10/02) - 9.9, 12.1, 11.7, 14.1, 10.1, 11.1, 11.7, 11.7, 13.1, 12.1, 9.4 ||| Stage 2/11.4, 11.3, 11.6, 11.3, 11.1, 11.1, 11.2, 11.5, 12.0, 11.3, 11.5, 11.7, 11.1, 11.7, 11.9, 11.4, 11.2, 11.7, 11.8, 11.1, 13.8
 local timerFrostboltCast			= mod:NewCastTimer(2, 72007, nil, "HasInterrupt")
 local timerFrostboltVolleyCD		= mod:NewCDTimer(14, 72905, nil, nil, nil, 2)
 local timerTouchInsignificance		= mod:NewTargetTimer(30, 71204, nil, "Tank|Healer", nil, 5)
@@ -325,10 +325,10 @@ function mod:OnCombatStart(delay)
 	warnAddsSoon:Schedule(2.5-delay)			-- 3sec pre-warning on start
 	self:Schedule(5.5-delay, addsTimer, self)
 	if not self:IsDifficulty("normal10") then
-		timerDominateMindCD:Start(27-delay)	-- REVIEW! 2s variance? (10H Lordaeron 2022/09/02 || 25H Lordaeron 2022/09/04 || 25H Lordaeron [2023-07-05]@[19:41:47]) - 28.7 || 27.0 || 27.0
+		timerDominateMindCD:Start(30-delay)	--|27| REVIEW! 2s variance? (10H Lordaeron 2022/09/02 || 25H Lordaeron 2022/09/04 || 25H Lordaeron [2023-07-05]@[19:41:47]) - 28.7 || 27.0 || 27.0
 		specWarnWeapons:Show(checkWeaponRemovalSetting(self) and ENABLE or ADDON_DISABLED, (self.Options.EqUneqWeapons and self.Options.EqUneqTimer and (SLASH_STOPWATCH2):sub(2)) or (self.Options.EqUneqWeapons and COMBAT_LOG) or NONE, self.Options.EqUneqFilter)
 		if checkWeaponRemovalSetting(self) and self.Options.EqUneqTimer then
-			self:Schedule(26.5-delay, UnW, self)
+			self:Schedule(24-delay, UnW, self) --|26.5|
 		end
 	end
 	table.wipe(dominateMindTargets)
@@ -447,7 +447,7 @@ function mod:SPELL_AURA_REMOVED(args)
 		warnPhase2:Show()
 		warnPhase2:Play("ptwo")
 		timerDominateMindCD:Restart(30)
-		timerSummonSpiritCD:Start() -- (25H Lordaeron 2022/10/21) - Stage 2/11.0
+		timerSummonSpiritCD:Start(12) --|0| (25H Lordaeron 2022/10/21) - Stage 2/11.0
 		timerTouchInsignificanceCD:Start(6) -- 3.4s variance [6.0-9.4] (25H Lordaeron [2022-09-23]@[20:40:18] || 25H Lordaeron [2022-10-05]@[20:21:27]) - Stage 2/6.0 || Stage 2/9.4
 		timerAdds:Cancel()
 		timerFrostboltVolleyCD:Start(20)
