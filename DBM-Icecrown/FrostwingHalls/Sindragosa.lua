@@ -47,9 +47,9 @@ local specWarnChilledtotheBone	= mod:NewSpecialWarningStack(70106, nil, mod:IsHe
 local specWarnBlisteringCold	= mod:NewSpecialWarningRun(70123, nil, nil, nil, 4, 2)
 
 local timerNextAirphase			= mod:NewTimer(110, "TimerNextAirphase", 43810, nil, nil, 6) -- Fixed timer on Air Yell: 110s
-local timerNextGroundphase		= mod:NewTimer(44.2, "TimerNextGroundphase", 43810, nil, nil, 6) -- 0.4s variance (10H Lordaeron 2022/10/02 || 25H Lordaeron 2022/10/02 || 25H Lordaeron 2022/10/06) - 44.2; 44.2 || 44.2; 44.3, 44.6; 44.2 || 45.1
+local timerNextGroundphase		= mod:NewTimer(45, "TimerNextGroundphase", 43810, nil, nil, 6) --|44.2| 0.4s variance (10H Lordaeron 2022/10/02 || 25H Lordaeron 2022/10/02 || 25H Lordaeron 2022/10/06) - 44.2; 44.2 || 44.2; 44.3, 44.6; 44.2 || 45.1
 local timerNextFrostBreath		= mod:NewNextTimer(22, 69649, nil, "Tank|Healer", nil, 5, nil, DBM_COMMON_L.TANK_ICON)
-local timerNextBlisteringCold	= mod:NewCDTimer(66, 70123, nil, nil, nil, 2, nil, DBM_COMMON_L.DEADLY_ICON, true, 2) -- Added "keep" arg
+local timerNextBlisteringCold	= mod:NewCDTimer(67, 70123, nil, nil, nil, 2, nil, DBM_COMMON_L.DEADLY_ICON, true, 2) --|66| Added "keep" arg
 local timerNextBeacon			= mod:NewNextCountTimer(16, 70126, nil, nil, nil, 3, nil, DBM_COMMON_L.DEADLY_ICON)
 local timerBeaconIncoming		= mod:NewTargetTimer("d7", 70126, nil, nil, nil, 3) -- One incoming timer for each target
 local timerBlisteringCold		= mod:NewCastTimer(6, 70123, nil, nil, nil, 2)
@@ -205,7 +205,7 @@ function mod:OnCombatStart(delay)
 	self:SetStage(1)
 	berserkTimer:Start(-delay)
 	timerNextAirphase:Start(50-delay)
-	timerNextBlisteringCold:Start(31.6-delay) -- ~10s variance [31.6-40] (10H Lordaeron 2022/10/02 || 25H Lordaeron 2022/10/02) - 37.5; 34.9 || 31.6; 36.4; 34.9; 34.9
+	timerNextBlisteringCold:Start(24-delay) -- |31.6|~10s variance [31.6-40] (10H Lordaeron 2022/10/02 || 25H Lordaeron 2022/10/02) - 37.5; 34.9 || 31.6; 36.4; 34.9; 34.9
 	timerTailSmash:Start(20-delay) -- (25H Lordaeron 2022/07/09 || 10N Icecrown 2022/08/22 || 10N Icecrown 2022/08/25 || 10H Lordaeron 2022/10/02 || 25H Lordaeron 2022/10/02) - 20.0 || 20.0 || 20.0 || 20.0; 20.0 || 20.0; 19.9; 20.0; 20.0
 	timerUnchainedMagic:Start(10-delay) -- (25H Lordaeron 2022/07/09 || 10N Icecrown 2022/08/22 || 10N Icecrown 2022/08/25) - 10.1 || 10.1 || 10.0
 	self.vb.warned_P2 = false
@@ -429,7 +429,7 @@ function mod:CHAT_MSG_MONSTER_YELL(msg)
 		timerNextAirphase:Cancel()
 		timerNextGroundphase:Cancel()
 		warnGroundphaseSoon:Cancel()
-		timerNextBlisteringCold:Restart(35) -- Fixed timer: 35s (25H Lordaeron 2024/11/28) - 35.03
+		timerNextBlisteringCold:Start(55) --|Restart(35)| Fixed timer: 35s (25H Lordaeron 2024/11/28) - 35.03
 		timerNextMysticBuffet:Start(6)
 		self:Schedule(6, cycleMysticBuffet, self)
 		self:Unschedule(landingPhaseWorkaround)
