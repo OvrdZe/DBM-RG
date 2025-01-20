@@ -28,9 +28,9 @@ local timerKoralonEnrage	= mod:NewBerserkTimer(300, nil, "KoralonEnrage")
 
 function mod:OnCombatStart(delay)
 	timerKoralonEnrage:Start(-delay)
-	timerNextMeteor:Start(44.9-delay) -- REVIEW! variance? (10N Lordaeron 2022/09/23) - pull:44.9
-	warnMeteorSoon:Schedule(44.9-5-delay)
-	timerBreathCD:Start(12.4-delay) -- REVIEW! variance? (10N Lordaeron 2022/09/23) - pull:12.4
+	timerNextMeteor:Start(-delay) --|44.9| REVIEW! variance? (10N Lordaeron 2022/09/23) - pull:44.9
+	warnMeteorSoon:Schedule(42-delay) --|44.9-5|
+	timerBreathCD:Start(12-delay) --|12.4| REVIEW! variance? (10N Lordaeron 2022/09/23) - pull:12.4
 	timerNextBurningFury:Start() -- (10N Lordaeron 2022/09/23) - pull:19.9
 end
 
