@@ -13,7 +13,7 @@ mod:RegisterEventsInCombat(
 
 local warningTomb	= mod:NewTargetNoFilterAnnounce(48400, 4)
 
-local timerTomb		= mod:NewTargetTimer(10, 48400, nil, nil, nil, 3)
+local timerTomb		= mod:NewTargetTimer(17, 48400, nil, nil, nil, 3)--|10|
 local timerTombCD	= mod:NewCDTimer(17, 48400, nil, nil, nil, 3)
 
 function mod:OnCombatStart()
