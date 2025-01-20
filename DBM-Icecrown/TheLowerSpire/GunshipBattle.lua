@@ -64,14 +64,14 @@ end
 
 function mod:OnCombatStart(delay)
 	DBM.BossHealth:Clear()
-	timerAdds:Start(12-delay)
-	warnAddsSoon:Schedule(7-delay)
---	self:Schedule(12-delay, Adds, self)
+	timerAdds:Start(15-delay) --|12|
+	warnAddsSoon:Schedule(10-delay) --|7|
+--	self:Schedule(15-delay, Adds, self) --|12|
 	self.vb.firstMage = false
 	if UnitFactionGroup("player") == "Alliance" then
 		timerBelowZeroCD:Start(39-delay) --Approximate, since it depends on cannon damage. Corrected on yell later
 	else
-		timerBelowZeroCD:Start(37-delay) --Approximate, since it depends on cannon damage. Corrected on yell later
+		timerBelowZeroCD:Start(45-delay) --|37| Approximate, since it depends on cannon damage. Corrected on yell later
 	end
 end
 
