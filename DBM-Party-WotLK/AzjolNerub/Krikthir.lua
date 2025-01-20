@@ -15,7 +15,7 @@ local warnCurse	= mod:NewSpellAnnounce(52592, 2)
 
 local specWarnCurse	= mod:NewSpecialWarningYou(52592, nil, nil, nil, 1, 2)
 
-local timerCurseCD	= mod:NewCDTimer(10, 52592, nil, nil, nil, 2)
+local timerCurseCD	= mod:NewCDTimer(20, 52592, nil, nil, nil, 2)--|10|
 
 function mod:SPELL_CAST_START(args)
 	if args:IsSpellID(52592, 59368) then
