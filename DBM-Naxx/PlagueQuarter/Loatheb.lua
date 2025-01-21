@@ -79,8 +79,8 @@ function mod:OnCombatStart(delay)
 	self.vb.doomCounter = 0
 	self.vb.sporeCounter = 0
 --	timerRemoveCurseCD:Start(3 - delay)
-	if self:IsDifficulty("normal25") then
-		self.vb.sporeTimer = 15
+	if self:IsDifficulty("heroic25") then
+		self.vb.sporeTimer = 18	--|15|
 		timerDoom:Start(90 - delay, 1)
 	else
 		self.vb.sporeTimer = 36
