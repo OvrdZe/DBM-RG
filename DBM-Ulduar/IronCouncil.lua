@@ -94,8 +94,8 @@ end
 
 function mod:OnCombatStart(delay)
 	enrageTimer:Start(-delay)
-	timerRuneofPowerCD:Start(20-delay) -- One log review (2022/07/05)
-	timerOverloadCD:Start(68) -- REVIEW! Insufficent data to validate if it's correct
+	timerRuneofPowerCD:Start(30) --|20-delay| One log review (2022/07/05)
+	timerOverloadCD:Start(40) --|68| REVIEW! Insufficent data to validate if it's correct
 	table.wipe(disruptTargets)
 	self.vb.disruptIcon = 7
 	runemasterAlive = true
@@ -143,7 +143,7 @@ end
 function mod:SPELL_CAST_SUCCESS(args)
 	if args:IsSpellID(63490, 62269) then		-- Rune of Death
 		warnRuneofDeath:Show()
-		timerRuneofDeath:Start()
+		timerRuneofDeath:Start(20) --|0|
 		warnRuneofDeathIn10Sec:Schedule(20)
 	elseif args:IsSpellID(61869, 63481) then	-- Overload
 		timerOverload:Start()
@@ -178,13 +178,13 @@ function mod:SPELL_AURA_APPLIED(args)
 				DBM.RangeCheck:Show(20)
 			end
 		end
-		if self:IsDifficulty("normal10") then
+		if self:IsDifficulty("heroic10") then
 			timerOverwhelmingPower:Start(60, args.destName)
 		else
 			timerOverwhelmingPower:Start(35, args.destName)
 		end
 		if self.Options.SetIconOnOverwhelmingPower then
-			if self:IsDifficulty("normal10") then
+			if self:IsDifficulty("heroic10") then
 				self:SetIcon(args.destName, 8, 60) -- skull for 60 seconds (until meltdown)
 			else
 				self:SetIcon(args.destName, 8, 35) -- skull for 35 seconds (until meltdown)
