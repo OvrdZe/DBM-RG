@@ -1,6 +1,6 @@
 <div align="center">
 
-# DBM-Warmane (3.3.5a)
+# DBM-RG (3.3.5a)
 
 [![Game Version](https://img.shields.io/badge/wow-3.3.5-blue.svg)](https://github.com/Zidras/DBM-Warmane)
 [![GitHub Actions](https://github.com/Zidras/DBM-Warmane/workflows/lint/badge.svg?branch=main&event=push)](https://github.com/Zidras/DBM-Warmane/actions?query=workflow%3Alint+branch%3Amain)
