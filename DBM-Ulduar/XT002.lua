@@ -16,7 +16,7 @@ mod:RegisterEventsInCombat(
 )
 
 -- General
-local enrageTimer					= mod:NewBerserkTimer(600)
+local enrageTimer					= mod:NewBerserkTimer(360) --|600|
 local timerAchieve					= mod:NewAchievementTimer(205, 2937)
 
 mod:AddRangeFrameOption(12, nil, true)
@@ -54,7 +54,7 @@ function mod:OnCombatStart(delay)
 	self:SetStage(1)
 	enrageTimer:Start(-delay)
 	timerAchieve:Start()
-	if self:IsDifficulty("normal10") then -- REVIEW. No log yet to validate this.
+	if self:IsDifficulty("heroic10") then -- REVIEW. No log yet to validate this.
 		timerTympanicTantrumCD:Start(35-delay)
 	else
 		timerTympanicTantrumCD:Start(60-delay)
@@ -125,7 +125,7 @@ function mod:SPELL_AURA_REMOVED(args)
 	elseif args.spellId == 63849 then	-- Exposed Heart
 		self:SetStage(1)
 		timerHeart:Stop()
-		timerTympanicTantrumCD:Start(35.6) -- REVIEW! Variance? (S3 FM Log review 2022/07/17 || 25m Lordearon 2022/10/10) -- 35.9 || 35.6
+		timerTympanicTantrumCD:Start(35.6) -- Is 65 in old files with a maybe comment, has to be testet. REVIEW! Variance? (S3 FM Log review 2022/07/17 || 25m Lordearon 2022/10/10) -- 35.9 || 35.6
 	end
 end
 
