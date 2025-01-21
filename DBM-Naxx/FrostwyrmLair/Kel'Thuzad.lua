@@ -44,12 +44,12 @@ local specWarnAddsGuardians	= mod:NewSpecialWarningAdds(29897, "-Healer", nil, n
 
 local blastTimer			= mod:NewBuffActiveTimer(4, 27808, nil, nil, nil, 5, nil, DBM_COMMON_L.HEALER_ICON)
 local timerManaBomb			= mod:NewCDTimer(20, 27819, nil, nil, nil, 3)--20-50
-local timerFrostBlast		= mod:NewCDTimer(30, 27808, nil, nil, nil, 3, nil, DBM_COMMON_L.DEADLY_ICON)--40-46 (retail 40.1)
+local timerFrostBlast		= mod:NewCDTimer(25, 27808, nil, nil, nil, 3, nil, DBM_COMMON_L.DEADLY_ICON)--|30| 40-46 (retail 40.1)
 local timerFissure			= mod:NewTargetTimer(5, 27810, nil, nil, 2, 3)
-local timerFissureCD 		= mod:NewCDTimer(11.5, 27810, nil, nil, nil, 3, nil, nil, true) -- Huge variance! Added "keep" arg (25m Lordaeron 2022/10/16) - Stage 2/*, 22.8, 41.2, 77.5, 11.5
+local timerFissureCD 		= mod:NewCDTimer(14, 27810, nil, nil, nil, 3, nil, nil, true) --|11.5| Huge variance! Added "keep" arg (25m Lordaeron 2022/10/16) - Stage 2/*, 22.8, 41.2, 77.5, 11.5
 local timerMC				= mod:NewBuffActiveTimer(20, 28410, nil, nil, nil, 3)
-local timerMCCD				= mod:NewCDTimer(90, 28410, nil, nil, nil, 3)--actually 60 second cdish but its easier to do it this way for the first one.
-local timerPhase2			= mod:NewTimer(228, "TimerPhase2", nil, nil, nil, 6) -- P2 script starts on Yell or Emote, and IEEU fires 0.55s after. (25m Lordaeron 2022/10/16) - 228.0
+local timerMCCD				= mod:NewCDTimer(60, 28410, nil, nil, nil, 3) --|90| actually 60 second cdish but its easier to do it this way for the first one.
+local timerPhase2			= mod:NewTimer(227, "TimerPhase2", nil, nil, nil, 6) --|228| P2 script starts on Yell or Emote, and IEEU fires 0.55s after. (25m Lordaeron 2022/10/16) - 228.0
 
 mod:AddRangeFrameOption(12, 27819)
 mod:AddSetIconOption("SetIconOnMC", 28410, true, false, {1, 2, 3})
