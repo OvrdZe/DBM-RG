@@ -40,12 +40,12 @@ local specWarnFelInferno		= mod:NewSpecialWarningMove(66496, nil, nil, nil, 1, 2
 local SpecWarnFelFireball		= mod:NewSpecialWarningInterrupt(66532, "HasInterrupt", nil, 2, 1, 2)
 local SpecWarnFelFireballDispel	= mod:NewSpecialWarningDispel(66532, "RemoveMagic", nil, 2, 1, 2)
 
-local timerCombatStart			= mod:NewCombatTimer(76)--roleplay for first pull
+local timerCombatStart			= mod:NewCombatTimer(83) --|76|roleplay for first pull
 local timerFlame				= mod:NewTargetTimer(8, 66197, nil, nil, nil, 3)--There are 8 debuff Ids. Since we detect first to warn, use an 8sec timer to cover duration of trigger spell and damage debuff.
 local timerFlameCD				= mod:NewNextTimer(30, 66197, nil, nil, nil, 3) -- (25H Lordaeron 2022/09/03) - 30.0, 30.0, 30.1, 30.0, 30.1, 30.0
-local timerNetherPowerCD		= mod:NewNextTimer(45, 67009, nil, "MagicDispeller", nil, 5, nil, DBM_COMMON_L.MAGIC_ICON) -- (25H Lordaeron 2022/09/03) - 45.1, 45.0, 45.0, 45.0
+local timerNetherPowerCD		= mod:NewNextTimer(40, 67009, nil, "MagicDispeller", nil, 5, nil, DBM_COMMON_L.MAGIC_ICON) --|45| (25H Lordaeron 2022/09/03) - 45.1, 45.0, 45.0, 45.0
 local timerFlesh				= mod:NewTargetTimer(12, 66237, nil, "Healer", 2, 5, nil, DBM_COMMON_L.HEALER_ICON)
-local timerFleshCD				= mod:NewNextTimer(30, 66237, nil, "Healer", 2, 5, nil, DBM_COMMON_L.HEALER_ICON) -- (25H Lordaeron 2022/09/03) - 30.0, 30.0, 30.0, 30.1, 30.0, 30.0
+local timerFleshCD				= mod:NewNextTimer(23, 66237, nil, "Healer", 2, 5, nil, DBM_COMMON_L.HEALER_ICON) --|30| (25H Lordaeron 2022/09/03) - 30.0, 30.0, 30.0, 30.1, 30.0, 30.0
 local timerPortalCD				= mod:NewCDTimer(120, 66269, nil, nil, nil, 1, nil, nil, true) -- REVIEW! 7s variance? Added "keep" arg (25H Lordaeron 2022/09/03 || 25H Lordaeron 2022/09/24) - 120.0 || 127.0
 local timerVolcanoCD			= mod:NewCDTimer(120, 66258, nil, nil, nil, 1) -- REVIEW! ~1s variance? (25H Lordaeron 2022/09/03 || 25H Lordaeron 2022/09/24) - 120.0 || 120.8
 local timerFelLightning			= mod:NewCDTimer(10, 67031, nil, nil, nil, 3, nil, nil, true) -- 7s variance [10-17]. Added "keep" arg (25H Lordaeron 2022/09/24 || 10N Lordaeron 2022/10/02) - 15.0, 12.8, 16.3, 12.1, 17.0, 14.8, 11.4, 11.1, 13.7, 14.0, 12.9, 14.2, 10.1, 10.5, 11.7 || 11.5, 12.4, 14.6, 13.4, 13.1
@@ -67,13 +67,13 @@ function mod:OnCombatStart(delay)
 		DBM.BossHealth:AddBoss(34780, L.name)
 	end
 	self.vb.fleshCount = 0
-	timerPortalCD:Start(22-delay) -- (25H Lordaeron 2022/09/03 || 25H Lordaeron 2022/09/24) - 22.0 || 22.0
+	timerPortalCD:Start(20-delay) --|20| (25H Lordaeron 2022/09/03 || 25H Lordaeron 2022/09/24) - 22.0 || 22.0
 	warnPortalSoon:Schedule(17-delay)
-	timerVolcanoCD:Start(82-delay) -- (25H Lordaeron 2022/09/03 || 25H Lordaeron 2022/09/24) - 82.0 || 89.0
+	timerVolcanoCD:Start(80-delay) --|82| (25H Lordaeron 2022/09/03 || 25H Lordaeron 2022/09/24) - 82.0 || 89.0
 	warnVolcanoSoon:Schedule(77-delay)
-	timerNetherPowerCD:Start(15-delay) -- (25H Lordaeron 2022/09/03) - 15.0
-	timerFleshCD:Start(13-delay) -- (25H Lordaeron 2022/09/03) - 13.0
-	timerFlameCD:Start(20-delay) -- (25H Lordaeron 2022/09/03) - 20.0
+	timerNetherPowerCD:Start(18-delay) --|15| (25H Lordaeron 2022/09/03) - 15.0
+	timerFleshCD:Start(15-delay) --|13| (25H Lordaeron 2022/09/03) - 13.0
+	timerFlameCD:Start(11-delay) --|20| (25H Lordaeron 2022/09/03) - 20.0
 	timerFelLightning:Start(-delay) -- (25H Lordaeron 2022/09/24 || 10N Lordaeron 2022/10/02) - 10.0 || 10.1
 	enrageTimer:Start(-delay)
 end
