@@ -15,9 +15,9 @@ local timerPlagueCloud			= mod:NewBuffActiveTimer(45, 30122, nil, nil, nil, 6)
 
 function mod:DancePhase()
 	timerPlagueCloud:Start()
-	warnTeleportSoon:Schedule(35, 10)
-	warnPlagueCloudEnd:Schedule(45)
-	self:ScheduleMethod(45, "BackInRoom", 88)
+	warnTeleportSoon:Schedule(37, 10) --|35, 10|
+	warnPlagueCloudEnd:Schedule(47) --|45|
+	self:ScheduleMethod(47, "BackInRoom", 88) --|45|
 	self:SetStage(2)
 end
 
