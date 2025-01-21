@@ -26,7 +26,7 @@ local timerTeleport		= mod:NewTimer(90, "TimerTeleport", 46573, nil, nil, 6, nil
 local timerTeleportBack	= mod:NewTimer(70, "TimerTeleportBack", 46573, nil, nil, 6, nil, nil, nil, nil, nil, nil, nil, 29231)
 local timerCurseCD		= mod:NewCDTimer(56.7, 29213, nil, nil, nil, 5, nil, DBM_COMMON_L.CURSE_ICON) -- REVIEW! variance? (25man Frostmourne 2022/05/25 || 25man Lordaeron 2022/10/16) -  56.7, 99.1! || 57.4
 local timerAddsCD		= mod:NewAddsTimer(30, 29247, nil, "-Healer")
-local timerBlink		= mod:NewNextTimer(30, 29208) -- (25N Lordaeron 2022/10/16) - 30.1, 30.0
+local timerBlink		= mod:NewNextTimer(25, 29208) --|30| (25N Lordaeron 2022/10/16) - 30.1, 30.0
 
 --local timerBerserk		= mod:NewBerserkTimer(665.07) -- spellId = 27680
 
