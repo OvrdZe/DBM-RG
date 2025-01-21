@@ -18,9 +18,9 @@ local warnRiderDown		= mod:NewAnnounce("WarningRiderDown", 4)
 local warnKnightDown	= mod:NewAnnounce("WarningKnightDown", 2)
 local warnPhase2		= mod:NewPhaseAnnounce(2, 3)
 
-local timerPhase2		= mod:NewTimer(277, "TimerPhase2", 27082, nil, nil, 6)
+local timerPhase2		= mod:NewTimer(270, "TimerPhase2", 27082, nil, nil, 6) --|277|
 local timerWave			= mod:NewTimer(20, "TimerWave", 5502, nil, nil, 1)
-local timerGate			= mod:NewTimer(155, "Gate Opens", 9484)
+local timerGate			= mod:NewTimer(205, "Gate Opens", 9484) --|155|
 
 mod.vb.wave = 0
 local wavesNormal = {
@@ -96,7 +96,7 @@ end
 
 function mod:OnCombatStart()
 	self:SetStage(1)
-	if self:IsDifficulty("normal25") then
+	if self:IsDifficulty("heroic25") then
 		waves = wavesHeroic
 	else
 		waves = wavesNormal
@@ -104,15 +104,15 @@ function mod:OnCombatStart()
 	self.vb.wave = 0
 	timerGate:Start()
 	timerPhase2:Start()
-	warnPhase2:Schedule(277)
+	warnPhase2:Schedule(270) --|277|
 	timerWave:Start(25, self.vb.wave + 1)
 	warnWaveSoon:Schedule(22, self.vb.wave + 1, getWaveString(self.vb.wave + 1))
 	self:Schedule(25, NextWave, self)
-	self:Schedule(277, StartPhase2, self)
+	self:Schedule(274, StartPhase2, self) |277|
 end
 
 function mod:OnTimerRecovery()
-	if self:IsDifficulty("normal25") then
+	if self:IsDifficulty("heroic25") then
 		waves = wavesHeroic
 	else
 		waves = wavesNormal
