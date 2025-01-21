@@ -35,11 +35,11 @@ local specWarnSearingFlames			= mod:NewSpecialWarningInterruptCount(62661, "HasI
 local timerEnrage					= mod:NewBerserkTimer(600)
 local timerSearingFlamesCast		= mod:NewCastTimer(2, 62661, nil, nil, nil, 5, nil, DBM_COMMON_L.INTERRUPT_ICON)
 local timerSurgeofDarkness			= mod:NewBuffActiveTimer(10, 62662, nil, "Tank", nil, 5, nil, DBM_COMMON_L.TANK_ICON)
-local timerNextSurgeofDarkness		= mod:NewCDTimer(51.9, 62662, nil, "Tank", nil, 5, nil, DBM_COMMON_L.TANK_ICON) -- REVIEW! 10s variance [50-60; 50-70 from TC]? (25 man NM log 2022/07/10 || S3 HM log 2022/07/21) - 58.0, 51.9 || 55.7, 60.1
+local timerNextSurgeofDarkness		= mod:NewCDTimer(61.2, 62662, nil, "Tank", nil, 5, nil, DBM_COMMON_L.TANK_ICON) --|51.9| REVIEW! 10s variance [50-60; 50-70 from TC]? (25 man NM log 2022/07/10 || S3 HM log 2022/07/21) - 58.0, 51.9 || 55.7, 60.1
 local timerSaroniteVapors			= mod:NewNextCountTimer(30, 63322, nil, nil, nil, 5, nil, DBM_COMMON_L.HEALER_ICON) -- Emote not fired if out of range (confirmed as of 2022/07/25). Has variance, but apply 30s regardless
-local timerShadowCrashCD			= mod:NewCDTimer(8.1, 62660, nil, "Ranged", nil, 3) -- 4s variance [8-12] (25 man NM log review 2022/07/10) - 8.8, 10.5, 8.6, 10.6, 10.3, 8.1, 11.8, 9.7, 10.6, 9.8, 14.2, 9.3, 9.1, 8.7, 8.4, 11.5, 8.9
+local timerShadowCrashCD			= mod:NewCDTimer(9, 62660, nil, "Ranged", nil, 3) --|8.1| 4s variance [8-12] (25 man NM log review 2022/07/10) - 8.8, 10.5, 8.6, 10.6, 10.3, 8.1, 11.8, 9.7, 10.6, 9.8, 14.2, 9.3, 9.1, 8.7, 8.4, 11.5, 8.9
 local timerMarkoftheFaceless		= mod:NewTargetTimer(10, 63276, nil, false, 2, 3, nil, DBM_COMMON_L.IMPORTANT_ICON)
-local timerMarkoftheFacelessCD		= mod:NewCDTimer(35.9, 63276, nil, nil, nil, 3, nil, DBM_COMMON_L.IMPORTANT_ICON) -- 15s variance [35-45] (25 man NM log 2022/07/10 || S3 HM log 2022/07/21) - 35.9, 41.1, 36.6 || 36.3, 37.6, 37.9, 43.9, 43.8, 40.1
+local timerMarkoftheFacelessCD		= mod:NewCDTimer(20.4, 63276, nil, nil, nil, 3, nil, DBM_COMMON_L.IMPORTANT_ICON) --|35.9| 15s variance [35-45] (25 man NM log 2022/07/10 || S3 HM log 2022/07/21) - 35.9, 41.1, 36.6 || 36.3, 37.6, 37.9, 43.9, 43.8, 40.1
 
 mod:AddSetIconOption("SetIconOnShadowCrash", 62660, true, false, {8})
 mod:AddSetIconOption("SetIconOnLifeLeach", 63276, true, false, {7})
@@ -49,7 +49,7 @@ mod:AddArrowOption("CrashArrow", 62660, true)
 mod:AddTimerLine(DBM_COMMON_L.HEROIC_ICON..DBM_CORE_L.HARD_MODE)
 local specWarnAnimus			= mod:NewSpecialWarningSwitch(63145, nil, nil, nil, 1, 2)
 
-local timerHardmode				= mod:NewTimer(212, "hardmodeSpawn", nil, nil, nil, 1) -- S3 VOD review 2022/07/15
+local timerHardmode				= mod:NewTimer(189, "hardmodeSpawn", nil, nil, nil, 1) --|212| S3 VOD review 2022/07/15
 
 mod.vb.interruptCount = 0
 mod.vb.vaporsCount = 0
@@ -91,13 +91,13 @@ end]]
 function mod:OnCombatStart(delay)
 	self.vb.interruptCount = 0
 	self.vb.vaporsCount = 0
-	timerShadowCrashCD:Start(8.0-delay) -- REVIEW! variance [8-12s?] (25 man NM log 2022/07/10 || S3 HM log 2022/07/21) - 8.0 || 9.6
-	timerMarkoftheFacelessCD:Start(35.1-delay) -- REVIEW! variance 35-45s? (25 man NM log 2022/07/10 || S3 HM log 2022/07/21) - 37.3 || 35.1
+	timerShadowCrashCD:Start(10-delay) --|8| REVIEW! variance [8-12s?] (25 man NM log 2022/07/10 || S3 HM log 2022/07/21) - 8.0 || 9.6
+	timerMarkoftheFacelessCD:Start(16.9-delay) --|35.1| REVIEW! variance 35-45s? (25 man NM log 2022/07/10 || S3 HM log 2022/07/21) - 37.3 || 35.1
 	timerSaroniteVapors:Start(30.0-delay, 1) -- Log reviewed (25 man NM log review 2022/07/10)
 	self:Schedule(30-delay, saroniteVaporsSpawned, self)
 	timerEnrage:Start(-delay)
 	timerHardmode:Start(-delay)
-	timerNextSurgeofDarkness:Start(60.0-delay) -- REVIEW! 10s variance [50-60]? (25 man NM log 2022/07/10 || S3 HM log 2022/07/21) - 60.0 || 60.0
+	timerNextSurgeofDarkness:Start(-delay) --|60| REVIEW! 10s variance [50-60]? (25 man NM log 2022/07/10 || S3 HM log 2022/07/21) - 60.0 || 60.0
 end
 
 -- Confirmed as of 2022/07/25: CLEU SPELL_CAST_x is randomly failing on Warmane and not firing - https://www.warmane.com/bugtracker/report/112497. Resort to AURA/UNIT_SPELLCAST_x events for now.
