@@ -33,7 +33,7 @@ local warnBlizzard		= mod:NewSpellAnnounce(28560, 4)
 
 local specWarnBlizzard	= mod:NewSpecialWarningGTFO(28547, nil, nil, nil, 1, 8)
 
-local timerDrainLife	= mod:NewCDTimer(24, 28542, nil, nil, nil, 3, nil, DBM_COMMON_L.CURSE_ICON) -- (25man Lordaeron 2022/09/02) - 24.0
+local timerDrainLife	= mod:NewCDTimer(20, 28542, nil, nil, nil, 3, nil, DBM_COMMON_L.CURSE_ICON) --|24| (25man Lordaeron 2022/09/02) - 24.0
 local timerAirPhase		= mod:NewTimer(60, "TimerAir", "Interface\\AddOns\\DBM-Core\\textures\\CryptFiendUnBurrow.blp", nil, nil, 6)
 local timerBlizzard		= mod:NewNextTimer(7, 28560, nil, nil, nil, 3)
 local timerTailSweep	= mod:NewNextTimer(9, 55696, nil, nil, nil, 2)
@@ -46,7 +46,7 @@ local warnIceBlock		= mod:NewTargetAnnounce(28522, 2)
 local specWarnDeepBreath= mod:NewSpecialWarningSpell(28524, nil, nil, nil, 1, 2)
 local yellIceBlock		= mod:NewYell(28522)
 
-local timerLanding		= mod:NewTimer(24.2, "TimerLanding", "Interface\\AddOns\\DBM-Core\\textures\\CryptFiendBurrow.blp", nil, nil, 6)
+local timerLanding		= mod:NewTimer(28.5, "TimerLanding", "Interface\\AddOns\\DBM-Core\\textures\\CryptFiendBurrow.blp", nil, nil, 6) --|24.2|
 local timerIceBlast		= mod:NewCastTimer(8, 28524, nil, nil, nil, 2, DBM_COMMON_L.DEADLY_ICON)
 
 mod:AddRangeFrameOption("12")
