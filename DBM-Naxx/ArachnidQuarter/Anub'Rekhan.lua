@@ -19,7 +19,7 @@ local warnImpale			= mod:NewTargetNoFilterAnnounce(28783, 3, nil, false)
 local specialWarningLocust	= mod:NewSpecialWarningSpell(28785, nil, nil, nil, 2, 2)
 local yellImpale			= mod:NewYell(28783, nil, false)
 
-local timerLocustIn			= mod:NewCDTimer(80, 28785, nil, nil, nil, 6)
+local timerLocustIn			= mod:NewCDTimer(55, 28785, nil, nil, nil, 6) --|80|
 local timerLocustFade		= mod:NewBuffActiveTimer(23, 28785, nil, nil, nil, 6)
 local timerImpale			= mod:NewCDTimer(13, 56090, nil, nil, nil, 3) -- REVIEW! ~7s variance [13.0-19.8]? (25m Lordaeron 2022/10/16) -- 13.7, 13.6, 19.8, 13.0
 
@@ -27,11 +27,11 @@ mod:AddBoolOption("ArachnophobiaTimer", true, "timer", nil, nil, nil, "at1859")-
 
 function mod:OnCombatStart(delay)
 	if self:IsDifficulty("normal25") then
-		timerLocustIn:Start(100 - delay)
-		warningLocustSoon:Schedule(90 - delay)
+		timerLocustIn:Start(70 - delay) --|100|
+		warningLocustSoon:Schedule(65 - delay) --|90|
 	else
-		timerLocustIn:Start(91 - delay)
-		warningLocustSoon:Schedule(76 - delay)
+		timerLocustIn:Start(70 - delay) --|91|
+		warningLocustSoon:Schedule(65 - delay) --|76|
 	end
 	timerImpale:Start(12.7-delay) -- REVIEW! variance? (25m Lordaeron 2022/10/16) - pull:12.7
 end
@@ -50,7 +50,7 @@ function mod:SPELL_CAST_START(args)
 		if self:IsDifficulty("normal25") then
 			timerLocustFade:Start(23)
 		else
-			timerLocustFade:Start(19)
+			timerLocustFade:Start(23) --|19|
 		end
 	end
 end
@@ -70,6 +70,7 @@ function mod:SPELL_AURA_REMOVED(args)
 	and args.auraType == "BUFF" then
 		warningLocustFaded:Show()
 		timerLocustIn:Start()
-		warningLocustSoon:Schedule(62)
+		warningLocustSoon:Schedule(70-23) --|62|
+		timerLocustIn:Start(75-23) --|copied from old DBM file|
 	end
 end
